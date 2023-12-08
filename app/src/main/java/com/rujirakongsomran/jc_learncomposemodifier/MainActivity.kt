@@ -8,14 +8,17 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -77,6 +80,42 @@ fun Modifier.colorfulBorder() =
         .padding(16.dp)
         .background(Color.Cyan)
         .padding(16.dp)
+
+@Composable
+fun TaroImageVerticalScroll() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(
+                rememberScrollState()
+            )
+    ) {
+        TaroImage(
+            modifier = Modifier
+                .padding(32.dp)
+                .fillMaxWidth()
+        )
+        TaroImage(
+            modifier = Modifier
+                .padding(32.dp)
+                .fillMaxWidth()
+        )
+
+        TaroImage(
+            modifier = Modifier
+                .padding(32.dp)
+                .fillMaxWidth()
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun TaroImageVerticalScrollPreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImageVerticalScroll()
+    }
+}
 
 @Composable
 fun ReuseCustomModifierPreview() {
@@ -264,7 +303,6 @@ fun TaroImageClipPreview() {
     }
 }
 
-@Preview(showSystemUi = true)
 @Composable
 fun TaroImageClickablePreview() {
     JC_LearnComposeModifierTheme {
@@ -272,7 +310,7 @@ fun TaroImageClickablePreview() {
             modifier = Modifier
                 .padding(32.dp)
                 .clip(CircleShape)
-                .clickable {  }
+                .clickable { }
 
         )
     }
