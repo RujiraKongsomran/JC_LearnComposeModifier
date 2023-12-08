@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -57,7 +58,6 @@ fun TaroImageSizePreview() {
     }
 }
 
-@Preview(showSystemUi = true)
 @Composable
 fun TaroImageSize2Preview() {
     JC_LearnComposeModifierTheme {
@@ -65,6 +65,28 @@ fun TaroImageSize2Preview() {
             modifier = Modifier
                 .width(100.dp)
                 .height(50.dp)
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun TaroImageFillMaxWidthPreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImage(
+            modifier = Modifier
+                .fillMaxWidth()
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun TaroImageFillMaxWidth2Preview() {
+    JC_LearnComposeModifierTheme {
+        TaroImage(
+            modifier = Modifier
+                .fillMaxWidth(0.5f)
         )
     }
 }
