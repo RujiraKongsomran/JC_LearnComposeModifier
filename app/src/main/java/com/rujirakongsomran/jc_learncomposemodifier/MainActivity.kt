@@ -61,6 +61,30 @@ fun CreateBackground() {
     )
 }
 
+fun Modifier.colorfulBorder() =
+    background(Color.Red)
+        .padding(16.dp)
+        .background(Color.Yellow)
+        .padding(16.dp)
+        .background(Color.Green)
+        .padding(16.dp)
+        .background(Color.Blue)
+        .padding(16.dp)
+        .background(Color.Cyan)
+        .padding(16.dp)
+@Preview(showSystemUi = true)
+@Composable
+fun ReuseCustomModifierPreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImage(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth()
+                .colorfulBorder()
+        )
+    }
+}
+
 @Composable
 fun CreateBackgroundPreview() {
     JC_LearnComposeModifierTheme {
@@ -158,6 +182,7 @@ fun TaroImageOrderModifierPreview() {
         )
     }
 }
+
 @Composable
 fun TaroImageOrderModifier2Preview() {
     JC_LearnComposeModifierTheme {
@@ -171,7 +196,7 @@ fun TaroImageOrderModifier2Preview() {
     }
 }
 
-@Preview(showSystemUi = true)
+
 @Composable
 fun TaroImageColorfulBorderPreview() {
     JC_LearnComposeModifierTheme {
@@ -192,5 +217,6 @@ fun TaroImageColorfulBorderPreview() {
         )
     }
 }
+
 
 
