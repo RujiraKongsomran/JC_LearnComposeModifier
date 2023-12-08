@@ -147,7 +147,6 @@ fun TaroImagePadding3Preview() {
     }
 }
 
-@Preview(showSystemUi = true)
 @Composable
 fun TaroImageOrderModifierPreview() {
     JC_LearnComposeModifierTheme {
@@ -159,7 +158,6 @@ fun TaroImageOrderModifierPreview() {
         )
     }
 }
-@Preview(showSystemUi = true)
 @Composable
 fun TaroImageOrderModifier2Preview() {
     JC_LearnComposeModifierTheme {
@@ -169,6 +167,28 @@ fun TaroImageOrderModifier2Preview() {
                 .fillMaxWidth()
                 .background(Color.Green)
                 .padding(32.dp)
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun TaroImageColorfulBorderPreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImage(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth()
+                .background(Color.Red)
+                .padding(16.dp)
+                .background(Color.Yellow)
+                .padding(16.dp)
+                .background(Color.Green)
+                .padding(16.dp)
+                .background(Color.Blue)
+                .padding(16.dp)
+                .background(Color.Cyan)
+                .padding(16.dp)
         )
     }
 }
