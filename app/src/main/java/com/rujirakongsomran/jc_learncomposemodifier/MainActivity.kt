@@ -17,6 +17,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -85,7 +86,6 @@ fun ReuseCustomModifierPreview() {
     }
 }
 
-@Preview(showSystemUi = true)
 @Composable
 fun ReuseCustomModifier2Preview() {
     JC_LearnComposeModifierTheme {
@@ -228,6 +228,17 @@ fun TaroImageColorfulBorderPreview() {
                 .padding(16.dp)
                 .background(Color.Cyan)
                 .padding(16.dp)
+        )
+    }
+}
+@Preview(showSystemUi = true)
+@Composable
+fun TaroImageBlurPreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImage(
+            modifier = Modifier
+                .fillMaxWidth()
+                .blur(16.dp)
         )
     }
 }
