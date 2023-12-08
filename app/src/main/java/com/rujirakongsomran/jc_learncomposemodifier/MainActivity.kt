@@ -72,7 +72,7 @@ fun Modifier.colorfulBorder() =
         .padding(16.dp)
         .background(Color.Cyan)
         .padding(16.dp)
-@Preview(showSystemUi = true)
+
 @Composable
 fun ReuseCustomModifierPreview() {
     JC_LearnComposeModifierTheme {
@@ -81,6 +81,20 @@ fun ReuseCustomModifierPreview() {
                 .padding(16.dp)
                 .fillMaxWidth()
                 .colorfulBorder()
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun ReuseCustomModifier2Preview() {
+    JC_LearnComposeModifierTheme {
+        val catImageModifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth()
+            .colorfulBorder()
+        TaroImage(
+            modifier = catImageModifier
         )
     }
 }
