@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -250,8 +251,9 @@ fun TaroImageClipPreview() {
     JC_LearnComposeModifierTheme {
         TaroImage(
             modifier = Modifier
+                .padding(32.dp)
                 .size(300.dp)
-                .clip(CircleShape)
+                .clip(RoundedCornerShape(64.dp))
         )
     }
 }
