@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
@@ -60,7 +61,6 @@ fun CreateBackground() {
     )
 }
 
-@Preview(showSystemUi = true)
 @Composable
 fun CreateBackgroundPreview() {
     JC_LearnComposeModifierTheme {
@@ -105,6 +105,47 @@ fun TaroImageFillMaxWidth2Preview() {
         TaroImage(
             modifier = Modifier
                 .fillMaxWidth(0.5f)
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun TaroImagePadding1Preview() {
+    JC_LearnComposeModifierTheme {
+        TaroImage(
+            modifier = Modifier
+                .padding(
+                    top = 32.dp,
+                    bottom = 64.dp,
+                    start = 24.dp,
+                    end = 16.dp
+                )
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun TaroImagePadding2Preview() {
+    JC_LearnComposeModifierTheme {
+        TaroImage(
+            modifier = Modifier
+                .padding(
+                    horizontal = 16.dp,
+                    vertical = 64.dp
+                )
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun TaroImagePadding3Preview() {
+    JC_LearnComposeModifierTheme {
+        TaroImage(
+            modifier = Modifier
+                .padding(16.dp)
         )
     }
 }
