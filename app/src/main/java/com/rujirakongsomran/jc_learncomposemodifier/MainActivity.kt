@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -246,7 +247,6 @@ fun TaroImageBlurPreview() {
     }
 }
 
-@Preview(showSystemUi = true)
 @Composable
 fun TaroImageClipPreview() {
     JC_LearnComposeModifierTheme {
@@ -260,6 +260,20 @@ fun TaroImageClipPreview() {
                         bottomEnd = 64.dp
                     )
                 )
+        )
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun TaroImageClickablePreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImage(
+            modifier = Modifier
+                .padding(32.dp)
+                .clip(CircleShape)
+                .clickable {  }
+
         )
     }
 }
