@@ -234,6 +234,7 @@ fun TaroImageColorfulBorderPreview() {
         )
     }
 }
+
 @Composable
 fun TaroImageBlurPreview() {
     JC_LearnComposeModifierTheme {
@@ -253,7 +254,12 @@ fun TaroImageClipPreview() {
             modifier = Modifier
                 .padding(32.dp)
                 .size(300.dp)
-                .clip(RoundedCornerShape(64.dp))
+                .clip(
+                    RoundedCornerShape(
+                        topStart = 64.dp,
+                        bottomEnd = 64.dp
+                    )
+                )
         )
     }
 }
