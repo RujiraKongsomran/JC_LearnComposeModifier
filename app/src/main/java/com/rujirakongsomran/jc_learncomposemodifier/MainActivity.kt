@@ -32,6 +32,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.rujirakongsomran.jc_learncomposemodifier.ui.theme.JC_LearnComposeModifierTheme
 
@@ -177,14 +178,14 @@ fun TaroImageOffset5() {
                 .padding(32.dp)
                 .fillMaxWidth()
                 .colorfulBorder()
-                .offset(x = -scrollState.value.dp)
+                .offset { IntOffset(-scrollState.value, 0) }
         )
         TaroImage(
             modifier = Modifier
                 .padding(32.dp)
                 .fillMaxWidth()
                 .colorfulBorder()
-                .offset(x = scrollState.value.dp)
+                .offset { IntOffset(scrollState.value, 0) }
         )
     }
 }
