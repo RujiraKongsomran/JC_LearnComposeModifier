@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -44,7 +45,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    TaroImageOffset5()
                 }
             }
         }
@@ -127,7 +128,75 @@ fun TaroImageHorizontalScroll() {
     }
 }
 
+@Composable
+fun TaroImageOffset() {
+    TaroImage(
+        modifier = Modifier
+            .offset(x = 200.dp)
+            .fillMaxWidth()
+    )
+}
+
+@Composable
+fun TaroImageOffset2() {
+    TaroImage(
+        modifier = Modifier
+            .offset(x = (-200).dp)
+            .fillMaxWidth()
+    )
+}
+
+@Composable
+fun TaroImageOffset3() {
+    TaroImage(
+        modifier = Modifier
+            .offset(y = (-200).dp)
+            .fillMaxWidth()
+    )
+}
+
+@Composable
+fun TaroImageOffset4() {
+    TaroImage(
+        modifier = Modifier
+            .offset(y = 100.dp)
+            .fillMaxWidth()
+    )
+}
+
+@Composable
+fun TaroImageOffset5() {
+    val scrollState = rememberScrollState()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(scrollState)
+    ) {
+        TaroImage(
+            modifier = Modifier
+                .padding(32.dp)
+                .fillMaxWidth()
+                .colorfulBorder()
+                .offset(x = -scrollState.value.dp)
+        )
+        TaroImage(
+            modifier = Modifier
+                .padding(32.dp)
+                .fillMaxWidth()
+                .colorfulBorder()
+                .offset(x = scrollState.value.dp)
+        )
+    }
+}
+
 @Preview(showSystemUi = true)
+@Composable
+fun TaroImageOffsetPreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImageOffset5()
+    }
+}
+
 @Composable
 fun TaroImageHorizontalScrollPreview() {
     JC_LearnComposeModifierTheme {
