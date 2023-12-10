@@ -28,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -179,6 +180,7 @@ fun TaroImageOffset5() {
                 .fillMaxWidth()
                 .colorfulBorder()
                 .offset { IntOffset(-scrollState.value, 0) }
+                .rotate(-scrollState.value.toFloat())
         )
         TaroImage(
             modifier = Modifier
@@ -186,6 +188,7 @@ fun TaroImageOffset5() {
                 .fillMaxWidth()
                 .colorfulBorder()
                 .offset { IntOffset(scrollState.value, 0) }
+                .rotate(scrollState.value.toFloat())
         )
     }
 }
