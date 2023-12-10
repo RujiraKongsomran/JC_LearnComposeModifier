@@ -193,7 +193,22 @@ fun TaroImageOffset5() {
     }
 }
 
+@Composable
+fun TaroImageRowScope() {
+    Row(modifier = Modifier.fillMaxWidth()) {
+        TaroImage(modifier = Modifier.weight(1f))
+        TaroImage(modifier = Modifier.weight(1f))
+    }
+}
+
 @Preview(showSystemUi = true)
+@Composable
+fun TaroImageRowScopePreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImageRowScope()
+    }
+}
+
 @Composable
 fun TaroImageOffsetPreview() {
     JC_LearnComposeModifierTheme {
