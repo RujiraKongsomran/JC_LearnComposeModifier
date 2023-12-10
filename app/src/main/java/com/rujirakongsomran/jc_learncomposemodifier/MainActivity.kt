@@ -24,7 +24,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
@@ -35,6 +37,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.rujirakongsomran.jc_learncomposemodifier.ui.theme.JC_LearnComposeModifierTheme
 
 class MainActivity : ComponentActivity() {
@@ -201,7 +204,56 @@ fun TaroImageRowScope() {
     }
 }
 
+@Composable
+fun MochiText(modifier: Modifier = Modifier) {
+    Text(
+        text = "Mochi",
+        fontSize = 40.sp,
+        modifier = modifier
+    )
+}
+
+@Composable
+fun MeowText(modifier: Modifier = Modifier) {
+    Text(
+        text = "Meow",
+        fontSize = 30.sp,
+        modifier = modifier
+    )
+}
+
+@Composable
+fun TaroImageRowScopeAlign() {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Color.LightGray)
+    ) {
+        MochiText(
+            modifier = Modifier
+                .align(Alignment.CenterVertically)
+        )
+        TaroImage(
+            modifier = Modifier
+                .padding(horizontal = 16.dp)
+                .weight(1f)
+        )
+        MeowText(
+            modifier = Modifier
+                .align(Alignment.Bottom)
+        )
+    }
+}
+
 @Preview(showSystemUi = true)
+@Composable
+fun TaroImageRowScopeAlignPreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImageRowScopeAlign()
+    }
+}
+
+
 @Composable
 fun TaroImageRowScopePreview() {
     JC_LearnComposeModifierTheme {
