@@ -245,7 +245,31 @@ fun TaroImageRowScopeAlign() {
     }
 }
 
+@Composable
+fun TaroImageRowScopeAlignByBaseline() {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Color.LightGray)
+    ) {
+        MochiText(
+            modifier = Modifier.alignByBaseline()
+        )
+        MeowText(
+            modifier = Modifier.alignByBaseline()
+        )
+    }
+}
+
 @Preview(showSystemUi = true)
+@Composable
+fun TaroImageRowScopeAlignByBaselinePreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImageRowScopeAlignByBaseline()
+    }
+}
+
+
 @Composable
 fun TaroImageRowScopeAlignPreview() {
     JC_LearnComposeModifierTheme {
