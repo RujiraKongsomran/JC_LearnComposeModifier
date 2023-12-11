@@ -33,6 +33,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
@@ -261,7 +262,31 @@ fun TaroImageRowScopeAlignByBaseline() {
     }
 }
 
+@Composable
+fun TaroImageBoxScopeAlign() {
+    Box(modifier = Modifier.fillMaxSize()) {
+        TaroImage(
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .size(200.dp)
+        )
+        TaroImage(
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .size(200.dp)
+        )
+    }
+}
+
 @Preview(showSystemUi = true)
+@Composable
+fun TaroImageBoxScopeAlignPreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImageBoxScopeAlign()
+    }
+}
+
+
 @Composable
 fun TaroImageRowScopeAlignByBaselinePreview() {
     JC_LearnComposeModifierTheme {
