@@ -278,7 +278,26 @@ fun TaroImageBoxScopeAlign() {
     }
 }
 
+@Composable
+fun TaroImageBoxScopeBackground() {
+    Box {
+        TaroImage(modifier = Modifier.size(200.dp))
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.Blue.copy(alpha = 0.3f))
+        )
+    }
+}
+
 @Preview(showSystemUi = true)
+@Composable
+fun TaroImageBoxScopeBackgroundPreview() {
+    JC_LearnComposeModifierTheme {
+        TaroImageBoxScopeBackground()
+    }
+}
+
 @Composable
 fun TaroImageBoxScopeAlignPreview() {
     JC_LearnComposeModifierTheme {
